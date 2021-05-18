@@ -2,22 +2,23 @@ import React from 'react'
 import './Header.css'
 import find_icon from '../../assets/img/find_icon.svg'
 import main_logo from '../../assets/img/main_logo.svg'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
     <>
       <nav>
-        <a href="#" className='logo'>
+        <Link to="/" className='logo'>
           <img src={main_logo} alt="site-logo" />
-        </a>
+        </Link>
 
 
-        <ul className='menu'>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Movies</a></li>
-          <li><a href="#">TV Shows</a></li>
-          <li><a href="#">Persones</a></li>
-          <li><a href="#">Horror</a></li>
+        <ul className="menu">
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="movies">Movies</Link></li>
+          <li><Link to="tvshows">TV Shows</Link></li>
+          <li><Link to="people">People</Link></li>
+          <li><Link to="more">More</Link></li>
         </ul>
 
         <div className='search'>

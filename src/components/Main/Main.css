@@ -3,3 +3,26 @@
     background-color: #ffffff;
 
 }
+
+.showcase-box-wrapper {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+
+}
+
+#latest {
+    border-top: 1px solid rgba(53, 53, 53, 0.1);
+}
+
+.latest-box-wrapper {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.latest-heading {
+    margin: 30px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
