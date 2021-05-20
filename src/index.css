@@ -17,3 +17,11 @@ a {
   text-decoration: none;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #dbdbdb;
+  border-radius: 50px;
+}

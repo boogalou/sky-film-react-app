@@ -3,15 +3,21 @@ import ShowcaseItem from './Showcase-Item/Showcase-Item'
 import { ApiService } from '../../api/apiService'
 import LatestItem from './Latest-Item/Latest-Item'
 import './Main.css'
+import BlockMenu from './Block-Menu/Block-Menu'
 
 const Main = () => {
-  const trends = new ApiService();
+  const popularity = new ApiService()
 
-  const [trending, setTrending] = useState([])
+  const [popular, setPopular] = useState([])
+  const [isActive, setIsActive] = useState(null)
+  const setIsActiveHandler = (activeMenuitem) => {
+    setIsActive(activeMenuitem)
+  }
 
   useEffect(() => {
-   trends.getTrends().then(result => setTrending(result))
-  }, [])
+    popularity.getPopularSows().then(result => setPopular(result))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isActive])
 
   return (
     <>
@@ -25,10 +31,12 @@ const Main = () => {
       </section>
 
       <section id="latest">
-        <h1 className="latest-heading">Latest Movies</h1>
+
+        <BlockMenu setIsActiveHandler={setIsActiveHandler} isActive={isActive} />
+
         <ul className="latest-box-wrapper">
 
-          {trending.map(movie => <LatestItem key={movie.id} {...movie}/>)}
+          {popular.map(movie => <LatestItem key={movie.id} {...movie}/>)}
 
         </ul>
       </section>

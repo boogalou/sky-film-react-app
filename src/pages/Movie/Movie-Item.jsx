@@ -1,17 +1,18 @@
 import React from 'react'
 import { apiConfig } from '../../config'
+import { Link } from 'react-router-dom'
 
-const MovieItem = ({poster_path}) => {
+const MovieItem = ({poster_path, title}) => {
   return (
     <>
       <div className="movies-box">
         <div className="movies-img">
-          <div className="h-desc">lorem ipsum dolor</div>
+
           <img src={apiConfig.baseImgURL+poster_path} alt="poster"/>
         </div>
-        <a href="#">
-          Some description on movie
-        </a>
+        <Link to="#">
+          {title}
+        </Link>
       </div>
     </>
   )

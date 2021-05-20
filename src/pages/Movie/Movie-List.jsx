@@ -15,6 +15,7 @@ const MovieList = () => {
   useEffect(() => {
     movies.getMovies()
       .then(data => setFilms(data))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

@@ -3,8 +3,7 @@
     height: 250px;
     box-shadow: 5px 15px 30px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    margin: 0 20px 10px 20px;
-    overflow: hidden;
+    margin: 0 20px 40px 20px;
 }
 
 .showcase-box img {
@@ -22,3 +21,11 @@
     font-size: 1.2rem;
     color: #1a1a1a;
 }
+
+
+
+
+
+
+
+

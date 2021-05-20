@@ -14,15 +14,14 @@ const Header = () => {
 
 
         <ul className="menu">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="movies">Movies</Link></li>
-          <li><Link to="tvshows">TV Shows</Link></li>
-          <li><Link to="people">People</Link></li>
-          <li><Link to="more">More</Link></li>
+          <li><Link to="/">Главная</Link></li>
+          <li><Link to="movies">Фильмы</Link></li>
+          <li><Link to="tvshows">Сериалы</Link></li>
+          <li><Link to="people">Актеры</Link></li>
         </ul>
 
         <div className='search'>
-          <input type="text" placeholder="Find you movies..." />
+          <input type="text" placeholder="Найти фильм..." />
 
 
             <img src={find_icon} alt="find_icon" width="9%" />

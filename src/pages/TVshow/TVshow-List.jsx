@@ -1,48 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import TVshowItem from './TVshow-Item'
+import { ApiService } from '../../api/apiService'
+import './TVshow-List.css'
 
 const TVshowList = () => {
+  const shows = new ApiService()
+
+  const [tvshow, setTvshow] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
+
+  console.log(tvshow);
+
+  useEffect(() => {
+    setIsLoading(true);
+    shows.getShows().then(data => setTvshow(data));
+    setIsLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <>
-      <div className="movies-heading">
-        <h2>Movies</h2>
+      <div className="tvshow-heading">
+        <h2>TV Shows</h2>
       </div>
-      <section id="movies-list">
-        <div className="movies-box">
-          <div className="movies-img">
-            <div className="h-desc">lorem ipsum dolor</div>
-            <img src="images/l-1.jpg" alt="" />
-          </div>
-          <a href="#">
-            Some description on movie
-          </a>
-        </div>
-        <div className="movies-box">
-          <div className="movies-img">
-            <img src="images/l-2.jpg" alt="" />
-          </div>
-
-          <a href="#">
-            Some description on movie
-          </a>
-        </div>
-        <div className="movies-box">
-          <div className="movies-img">
-            <img src="/images/l-3.jpg" alt="" />
-          </div>
-
-          <a href="#">
-            Some description on movie
-          </a>
-        </div>
-        <div className="movies-box">
-          <div className="movies-img">
-            <img src="images/l-4.jpg" alt="" />
-          </div>
-
-          <a href="#">
-            Some description on movie
-          </a>
-        </div>
+      <section id="tvshow-list">
+        { isLoading ? 'loading...' :
+          tvshow.map(show => <TVshowItem key={show.id} {...show} />)
+        }
       </section>
     </>
   )
