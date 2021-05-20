@@ -30,13 +30,3 @@ export class ApiService {
 
 }
 
-
-// let str = 'https://api.themoviedb.org/3/movie/now_playing?api_key=d5f4b7a1cf6705689b318f72dacb543f&language=ru-RU&page=1'
-//
-// const ru = {
-//
-//   "iso_639_1": "ru",
-//   "english_name": "Russian",
-//   "name": "Pусский"
-
-// }
