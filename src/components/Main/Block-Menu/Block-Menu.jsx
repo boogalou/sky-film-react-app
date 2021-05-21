@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Block-Menu.css'
 
-const BlockMenu = ({ setIsActiveHandler, isActive }) => {
-  const menu = ['По ТВ', 'Напрокат', 'В кинотеатрах'];
+const BlockMenu = ({ setIsActiveHandler, isActive, menu }) => {
+
   const menuSelectorHandler = (value) => {
     setIsActiveHandler(value)
   }

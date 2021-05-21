@@ -1,32 +1,34 @@
 import axios from 'axios'
 import { apiConfig } from '../config'
 
-const {baseURL, API_KEY} = apiConfig
+const { baseURL, API_KEY } = apiConfig
 
 export class ApiService {
 
-
-
-  async getResource(url, lng)  {
-    const response = await axios.get(`${baseURL}${url}${API_KEY}${lng}`);
-    return response.data.results;
+  async getResource (url = '', lng = '', region = '', page = '') {
+    const response = await axios.get(
+      `${baseURL}${url}${API_KEY}${lng}${region}${page}`)
+    return response.data.results
   }
 
-  getTrends() {
-    return this.getResource('trending/movie/week');
-  }
 
   getMovies() {
-    return this.getResource('discover/movie');
+    return this.getResource('movie/popular' )
   }
 
-  getShows() {
-    return this.getResource('discover/tv');
+  getTvshows() {
+    return this.getResource('tv/popular')
   }
 
-  getPopularSows() {
-    return this.getResource('discover/tv', '&language=ru-Ru&sort_by=popularity.desc&page=1&timezone=Russia%2FMoscow&include_null_first_air_dates=false&with_watch_monetization_types=flatrate')
+  getPopularity (isActive) {
+    if (!isActive) {
+      return this.getResource('movie/popular', '&language=ru-RU', '&region=RU')
+    } else if (isActive === 'По ТВ') {
+      return this.getResource('tv/on_the_air', '&language=ru-RU', '&region=RU')
+    } else {
+      return this.getResource('movie/now_playing', '&language=ru-RU',
+        'region=RU')
+    }
   }
-
 }
 

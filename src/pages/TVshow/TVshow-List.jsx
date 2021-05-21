@@ -4,17 +4,15 @@ import { ApiService } from '../../api/apiService'
 import './TVshow-List.css'
 
 const TVshowList = () => {
-  const shows = new ApiService()
 
-  const [tvshow, setTvshow] = useState([]);
+  const shows = new ApiService()
+  const [tvshows, setTvshows] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
-  console.log(tvshow);
-
   useEffect(() => {
-    setIsLoading(true);
-    shows.getShows().then(data => setTvshow(data));
-    setIsLoading(false);
+    setIsLoading(true)
+    shows.getTvshows().then(data => setTvshows(data))
+    setIsLoading(false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -24,8 +22,8 @@ const TVshowList = () => {
         <h2>TV Shows</h2>
       </div>
       <section id="tvshow-list">
-        { isLoading ? 'loading...' :
-          tvshow.map(show => <TVshowItem key={show.id} {...show} />)
+        {isLoading ? 'loading...' :
+          tvshows.map(show => <TVshowItem key={show.id} {...show} />)
         }
       </section>
     </>

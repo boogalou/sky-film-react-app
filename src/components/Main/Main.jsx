@@ -6,16 +6,19 @@ import './Main.css'
 import BlockMenu from './Block-Menu/Block-Menu'
 
 const Main = () => {
-  const popularity = new ApiService()
+  const menu = ['По ТВ', 'В кинотеатрах']
 
+  const popularity = new ApiService()
+  console.log(popularity)
   const [popular, setPopular] = useState([])
   const [isActive, setIsActive] = useState(null)
+
   const setIsActiveHandler = (activeMenuitem) => {
     setIsActive(activeMenuitem)
   }
 
   useEffect(() => {
-    popularity.getPopularSows().then(result => setPopular(result))
+    popularity.getPopularity(isActive).then(result => setPopular(result))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive])
 
@@ -32,7 +35,8 @@ const Main = () => {
 
       <section id="latest">
 
-        <BlockMenu setIsActiveHandler={setIsActiveHandler} isActive={isActive} />
+        <BlockMenu setIsActiveHandler={setIsActiveHandler} menu={menu}
+                   isActive={isActive}/>
 
         <ul className="latest-box-wrapper">
 
