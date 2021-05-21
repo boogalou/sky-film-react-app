@@ -5,6 +5,7 @@ import Main from './components/Main/Main'
 import { Route } from 'react-router-dom'
 import TVshowList from './pages/TVshow/TVshow-List'
 import MovieList from './pages/Movie/Movie-List'
+import People from './pages/People/People'
 
 function App () {
   return (
@@ -22,7 +23,11 @@ function App () {
         <TVshowList />
       </Route>
 
-      <Footer/>
+      <Route path='/people'>
+          <People />
+      </Route>
+
+      <Footer />
     </div>
   )
 }

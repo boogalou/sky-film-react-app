@@ -19,7 +19,7 @@ const TVshowList = () => {
   return (
     <>
       <div className="tvshow-heading">
-        <h2>TV Shows</h2>
+        <h2>Сериалы</h2>
       </div>
       <section id="tvshow-list">
         {isLoading ? 'loading...' :

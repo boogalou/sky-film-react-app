@@ -14,10 +14,10 @@ const Header = () => {
 
 
         <ul className="menu">
-          <li><Link to="/">Главная</Link></li>
-          <li><Link to="movies">Фильмы</Link></li>
-          <li><Link to="tvshows">Сериалы</Link></li>
-          <li><Link to="people">Актеры</Link></li>
+          <li><Link to='/'>Главная</Link></li>
+          <li><Link to='movies'>Фильмы</Link></li>
+          <li><Link to='tvshows'>Сериалы</Link></li>
+          <li><Link to='people'>Актеры</Link></li>
         </ul>
 
         <div className='search'>

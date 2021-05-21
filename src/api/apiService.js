@@ -11,13 +11,17 @@ export class ApiService {
     return response.data.results
   }
 
-
-  getMovies() {
-    return this.getResource('movie/popular' )
+  getMovies () {
+    return this.getResource('movie/popular')
   }
 
-  getTvshows() {
+  getTvshows () {
     return this.getResource('tv/popular')
+  }
+
+  getActors () {
+    return this.getResource('person/popular', '&language=ru-RU', '&region=RU',
+      1)
   }
 
   getPopularity (isActive) {
@@ -26,8 +30,7 @@ export class ApiService {
     } else if (isActive === 'По ТВ') {
       return this.getResource('tv/on_the_air', '&language=ru-RU', '&region=RU')
     } else {
-      return this.getResource('movie/now_playing', '&language=ru-RU',
-        'region=RU')
+      return this.getResource('movie/now_playing', '&language=ru-RU', 'region=RU')
     }
   }
 }

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import './Main.css'
 import ShowcaseItem from './Showcase-Item/Showcase-Item'
 import { ApiService } from '../../api/apiService'
 import LatestItem from './Latest-Item/Latest-Item'
-import './Main.css'
 import BlockMenu from './Block-Menu/Block-Menu'
 
 const Main = () => {
   const menu = ['По ТВ', 'В кинотеатрах']
 
   const popularity = new ApiService()
-  console.log(popularity)
+
   const [popular, setPopular] = useState([])
   const [isActive, setIsActive] = useState(null)
 
@@ -24,15 +24,6 @@ const Main = () => {
 
   return (
     <>
-      <section id="main">
-        <h1 className="showcase-heading">Showcase</h1>
-        <ul className="showcase-box-wrapper">
-
-          <ShowcaseItem/>
-
-        </ul>
-      </section>
-
       <section id="latest">
 
         <BlockMenu setIsActiveHandler={setIsActiveHandler} menu={menu}
@@ -45,6 +36,14 @@ const Main = () => {
         </ul>
       </section>
 
+      <section id="main">
+        <h1 className="showcase-heading">Showcase</h1>
+        <ul className="showcase-box-wrapper">
+
+          <ShowcaseItem/>
+
+        </ul>
+      </section>
     </>
   )
 }

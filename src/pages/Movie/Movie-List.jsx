@@ -10,8 +10,6 @@ const MovieList = () => {
 
   const [films, setFilms] = useState([]);
 
-  console.log(films);
-
   useEffect(() => {
     movies.getMovies()
       .then(data => setFilms(data))
@@ -21,7 +19,7 @@ const MovieList = () => {
   return (
     <>
       <div className="movies-heading">
-        <h2>Movies</h2>
+        <h2>Фильмы</h2>
       </div>
       <section id="movies-list">
 

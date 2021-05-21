@@ -1,6 +1,7 @@
 .column_header {
     display: flex;
     align-items: center;
+    padding-top: 80px;
     padding-left: 30px;
     padding-right: 30px;
 }
