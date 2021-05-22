@@ -1,25 +1,25 @@
 import React from 'react'
-import './Block-Menu.css'
+import './Popular-Switcher.css'
 
-const BlockMenu = ({ setIsActiveHandler, isActive, menu }) => {
-
+const PopularSwitcher = ({ setIsActiveHandler, isActive, popularMenu }) => {
+  console.log(popularMenu)
   const menuSelectorHandler = (value) => {
     setIsActiveHandler(value)
   }
   return (
     <>
-      <div className="column_header">
+      <div className="column_header_pop">
         <h2>Популярное</h2>
 
-        <div className="selector_wrap">
-          <div className="selector">
+        <div className="selector_wrap_pop">
+          <div className="selector_pop">
             <div
               className={isActive === null ? 'active' : ''}
               onClick={() => menuSelectorHandler(null)}
             >
               Онлайн
             </div>
-            {menu.map((item, index) => (
+            {popularMenu.map((item, index) => (
               <MenuItem
                 key={`${item}_${index}`}
                 item={item}
@@ -34,7 +34,7 @@ const BlockMenu = ({ setIsActiveHandler, isActive, menu }) => {
   )
 }
 
-export default BlockMenu
+export default PopularSwitcher;
 
 const MenuItem = ({ item, menuSelectorHandler, activeItem }) => {
 

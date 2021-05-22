@@ -1,4 +1,4 @@
-.column_header {
+.column_header_trend {
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -6,19 +6,27 @@
     padding-right: 30px;
 }
 
- .selector {
-    margin: 25px;
+.column_header_trend {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+ .selector_trend {
+    margin: 10px;
     display: flex;
     border: solid 1px black;
     border-radius: 35px;
 }
 
-.selector div {
+.selector_trend div {
     display: flex;
     justify-content: center;
     padding: 10px 15px 10px 15px;
     border-radius: 35px;
-    font-size: .95em;
+    font-size: .85em;
     font-weight: 550;
     cursor: pointer;
 

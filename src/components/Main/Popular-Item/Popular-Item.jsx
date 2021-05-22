@@ -1,8 +1,8 @@
 import React from 'react'
-import './Latest-Item.css'
+import './Popular-Item.css'
 import { apiConfig } from '../../../config'
 
-const LatestItem = ({
+const PopularItem = ({
   title,
   name,
   release_date,
@@ -12,13 +12,13 @@ const LatestItem = ({
   return (
     <>
       <li>
-        <div className="latest-box">
-          <div className="latest-b-img">
+        <div className="popular-box">
+          <div className="popular-b-img">
             <img src={`${apiConfig.baseImgURL}${poster_path}`}
                  alt="movie poster"/>
           </div>
 
-          <div className="latest-b-description">
+          <div className="popular-b-description">
             <span className={'title'}>{title || name}</span>
             <span className={'release'}>{release_date || first_air_date}</span>
           </div>
@@ -29,4 +29,4 @@ const LatestItem = ({
   )
 }
 
-export default LatestItem
+export default PopularItem

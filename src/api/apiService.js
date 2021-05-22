@@ -30,8 +30,22 @@ export class ApiService {
     } else if (isActive === 'По ТВ') {
       return this.getResource('tv/on_the_air', '&language=ru-RU', '&region=RU')
     } else {
-      return this.getResource('movie/now_playing', '&language=ru-RU', 'region=RU')
+      return this.getResource('movie/now_playing', '&language=ru-RU',
+        '&region=RU')
     }
   }
+
+  getTrends (isTime) {
+    if (!isTime) {
+      isTime = 'day'
+    } else isTime = 'week'
+    return this.getResource(`trending/movie/${isTime}`, '&language=ru-RU',
+      '&region=RU')
+  }
+
+  getTrailers () {
+    return this.getResource('movie/top_rated')
+  }
+
 }
 

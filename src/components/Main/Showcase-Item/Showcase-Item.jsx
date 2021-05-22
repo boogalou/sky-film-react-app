@@ -1,33 +1,17 @@
 import React from 'react'
 import './Showcase-Item.css'
+import { apiConfig } from '../../../config'
 
-const ShowcaseItem = () => {
+
+const ShowcaseItem = ({ poster_path, backdrop_path, title }) => {
+
   return (
     <>
-      <li>
+      <li className='showcase-container'>
         <div className="showcase-box">
-          <img src="./images/s-1.jpg" alt=""/>
+          <img src={apiConfig.baseImgURL + backdrop_path} alt="movie poster"/>
         </div>
-      </li>
-      <li>
-        <div className="showcase-box">
-          <img src="./images/s-2.jpg" alt=""/>
-        </div>
-      </li>
-      <li>
-        <div className="showcase-box">
-          <img src="./images/s-3.jpg" alt=""/>
-        </div>
-      </li>
-      <li>
-        <div className="showcase-box">
-          <img src="./images/s-4.jpg" alt=""/>
-        </div>
-      </li>
-      <li>
-        <div className="showcase-box">
-          <img src="./images/s-5.png" alt=""/>
-        </div>
+        <span className='movie-title'>{title}</span>
       </li>
     </>
   )

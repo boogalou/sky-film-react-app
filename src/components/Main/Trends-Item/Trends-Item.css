@@ -1,29 +1,29 @@
 
-.latest-box {
+.trends-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
-    margin: 20px 13px;
+    margin: 5px 10px;
     border-radius: 10px;
     overflow: hidden;
-    width: 200px;
-    min-height: 355px;
-    background-color: #fff;
+    width: 150px;
+    /*min-height: 225px;*/
+    /*background-color: rgba(0, 0, 0, 0);*/
 }
 
-.latest-b-img {
+.trends-b-img {
     width: 100%;
-    height: 270px;
+    height: 100%;
 }
 
-.latest-b-img img {
+.trends-b-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.latest-b-description {
+.trends-b-description {
     width: 100%;
     display: flex;
     justify-content: center;
