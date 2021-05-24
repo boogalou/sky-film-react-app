@@ -5,9 +5,10 @@ const { baseURL, API_KEY } = apiConfig
 
 export class ApiService {
 
-  async getResource (url = '', lng = '', region = '', page = '') {
+  async getResource (
+    url = '', lng = '&language=ru-RU', region = '&region=RU',  page = '', search = '',) {
     const response = await axios.get(
-      `${baseURL}${url}${API_KEY}${lng}${region}${page}`)
+      `${baseURL}${url}${API_KEY}${lng}${region}${page}${search}`)
     return response.data.results
   }
 
@@ -36,15 +37,17 @@ export class ApiService {
   }
 
   getTrends (isTime) {
-    if (!isTime) {
-      isTime = 'day'
-    } else isTime = 'week'
+    !isTime ? isTime = 'day' : isTime = 'week'
     return this.getResource(`trending/movie/${isTime}`, '&language=ru-RU',
       '&region=RU')
   }
 
   getTrailers () {
     return this.getResource('movie/top_rated')
+  }
+
+  search (searchValue) {
+     return this.getResource('search/multi', '&language=ru-Ru', '&region=RU', `&query=${searchValue}`)
   }
 
 }

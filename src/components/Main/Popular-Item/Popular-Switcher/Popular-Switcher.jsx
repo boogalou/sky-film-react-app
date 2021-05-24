@@ -2,7 +2,6 @@ import React from 'react'
 import './Popular-Switcher.css'
 
 const PopularSwitcher = ({ setIsActiveHandler, isActive, popularMenu }) => {
-  console.log(popularMenu)
   const menuSelectorHandler = (value) => {
     setIsActiveHandler(value)
   }
