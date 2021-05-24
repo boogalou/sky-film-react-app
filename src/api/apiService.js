@@ -6,9 +6,9 @@ const { baseURL, API_KEY } = apiConfig
 export class ApiService {
 
   async getResource (
-    url = '', lng = '&language=ru-RU', region = '&region=RU',  page = '', search = '',) {
+    url = '', lng = '&language=ru-RU', region = '&region=RU',  search = '') {
     const response = await axios.get(
-      `${baseURL}${url}${API_KEY}${lng}${region}${page}${search}`)
+      `${baseURL}${url}${API_KEY}${lng}${region}${search}&page=1`)
     return response.data.results
   }
 
@@ -47,7 +47,7 @@ export class ApiService {
   }
 
   search (searchValue) {
-     return this.getResource('search/multi', '&language=ru-Ru', '&region=RU', `&query=${searchValue}`)
+     return this.getResource('search/multi', '&language=ru-Ru', '&region=RU',  `&query=${searchValue}`)
   }
 
 }

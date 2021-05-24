@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css'
 import find_icon from '../../assets/img/find_icon.svg'
 import main_logo from '../../assets/img/main_logo.svg'
-import {Link, Redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import {ApiService} from '../../api/apiService'
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
 
   const [searchValue, setSearchValue] = React.useState('');
   const [searchResult, setSearchResult] = React.useState([]);
-
+console.log(searchResult)
 
   const searchValueHandler = (evt) => {
     setSearchValue(evt.target.value);
@@ -36,7 +36,6 @@ const Header = () => {
 
         <div className='search'>
           <input type="text"
-                 // onKeyDown={onKeyDownHandler}
                  placeholder="Найти фильм..."
                  onChange={searchValueHandler}
                  value={searchValue}

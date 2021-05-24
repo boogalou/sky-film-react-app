@@ -2,14 +2,11 @@
 .trends-box {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.2);
+    align-items: center;
     margin: 5px 10px;
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
     width: 150px;
-    /*min-height: 225px;*/
-    /*background-color: rgba(0, 0, 0, 0);*/
 }
 
 .trends-b-img {
@@ -18,6 +15,7 @@
 }
 
 .trends-b-img img {
+    border-radius: 8px;
     width: 100%;
     height: 100%;
     object-fit: cover;

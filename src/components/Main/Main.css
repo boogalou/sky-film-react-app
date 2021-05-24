@@ -1,5 +1,4 @@
 #main {
-    padding-top: 10px;
     background-color: #fbfbfb;
 }
 
@@ -7,6 +6,10 @@
     display: flex;
     align-items: center;
     overflow: auto;
+}
+
+.showcase-heading {
+    margin-top: 0;
 }
 
 .showcase-box-wrapper::-webkit-scrollbar {
@@ -27,6 +30,7 @@
     display: flex;
     align-items: flex-start;
     overflow-x: auto;
+    margin-bottom: 0;
 }
 
 .popular-box-wrapper::-webkit-scrollbar {
@@ -53,6 +57,7 @@
     display: flex;
     align-items: flex-start;
     overflow-x: auto;
+    margin-bottom: 0;
 }
 
 .trends-box-wrapper::-webkit-scrollbar {

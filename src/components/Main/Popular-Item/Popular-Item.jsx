@@ -14,7 +14,7 @@ const PopularItem = ({
       <li>
         <div className="popular-box">
           <div className="popular-b-img">
-            <img src={`${apiConfig.baseImgURL}${poster_path}`}
+            <img src={`${apiConfig.image.w500ImgURL}${poster_path}`}
                  alt="movie poster"/>
           </div>
 
