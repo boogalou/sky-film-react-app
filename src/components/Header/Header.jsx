@@ -29,9 +29,9 @@ console.log(searchResult)
 
         <ul className="menu">
           <li><Link to='/'>Главная</Link></li>
-          <li><Link to='movies'>Фильмы</Link></li>
-          <li><Link to='tvshows'>Сериалы</Link></li>
-          <li><Link to='people'>Люди</Link></li>
+          <li><Link to='/movie'>Фильмы</Link></li>
+          <li><Link to='/tvshows'>Сериалы</Link></li>
+          <li><Link to='/people'>Люди</Link></li>
         </ul>
 
         <div className='search'>

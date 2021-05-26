@@ -1,0 +1,113 @@
+#container {
+    color: #e1e5ea;
+}
+
+.content_wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.movie_details {
+    margin-top: 80px;
+    display: flex;
+    padding: 30px 40px;
+}
+
+.detail_column{
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-left: 40px;
+}
+
+.poster .poster_img {
+    width: 300px;
+    height: 450px;
+    border-radius: 8px;
+}
+
+.movie_title {
+    margin-bottom: 24px;
+}
+
+.facts span {
+    margin-right: 15px;
+}
+
+.actions {
+    width: 100%;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.actions li {
+    margin-right: 20px;
+}
+
+.review_title {
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+
+ol.people.no_image, ol.people.no_cast {
+    margin-top: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+ol.people {
+    list-style-type: none;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+ol.people.no_image li {
+    width: 33%;
+    flex-basis: 33%;
+    text-align: left;
+    margin-bottom: 14px;
+    margin-right: 0;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+
+ol.people li {
+    min-width: 140px;
+    width: 140px;
+    margin-right: 10px;
+}
+
+.profile .character {
+    font-weight: 100;
+    font-size: small;
+}
+
+.tagline .tagline_title {
+    font-weight: 600;
+    font-style: italic;
+    font-size: small;
+    color: #939191;
+}
+
+.tagline .review_title {
+
+    font-style: italic;
+    font-size: medium;
+    color: #939191;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+

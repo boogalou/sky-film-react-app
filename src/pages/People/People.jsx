@@ -11,7 +11,7 @@ const People = () => {
 
   useEffect(() => {
     people.getActors()
-      .then(data => setPeoples(data))
+      .then(response => setPeoples(response.results))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

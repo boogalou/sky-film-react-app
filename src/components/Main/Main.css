@@ -1,4 +1,6 @@
-#main {
+#main-container {
+    max-width: 1400px;
+    margin: 0 auto;
     background-color: #fbfbfb;
 }
 
@@ -9,6 +11,7 @@
 }
 
 .showcase-heading {
+
     margin-top: 0;
 }
 
@@ -22,7 +25,7 @@
 }
 
 #popular {
-    /*border-top: 1px solid rgba(53, 53, 53, 0.1);*/
+
 }
 
 .popular-box-wrapper {
@@ -49,7 +52,7 @@
 }
 
 #trends {
-    /*border-top: 1px solid rgba(53, 53, 53, 0.1);*/
+
 }
 
 .trends-box-wrapper {

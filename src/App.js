@@ -2,40 +2,41 @@ import './App.css'
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer'
 import Main from './components/Main/Main'
-import { Route } from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import TVshowList from './pages/TVshow/TVshow-List'
 import MovieList from './pages/Movie/Movie-List'
 import People from './pages/People/People'
 import SearchResult from "./pages/Search-result/Search-result";
+import DetailsPage from "./pages/Details-page/Details-Page";
 
-function App () {
+function App() {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <div className="main-container">
       <Header/>
+
       <Route exact path='/'>
-        <Main />
+        <Main/>
       </Route>
 
-      <Route path='/movies'>
-        <MovieList />
-      </Route>
+        <Route path='/movie' exact  component={MovieList}/>
+        <Route path='/movie/:id' component={DetailsPage}/>
 
       <Route path='/tvshows'>
-        <TVshowList />
+        <TVshowList/>
       </Route>
 
       <Route path='/people'>
-          <People />
+        <People/>
       </Route>
 
       <Route path='/search'>
-        <SearchResult />
+        <SearchResult/>
       </Route>
 
-      <Footer />
+
+      <Footer/>
     </div>
   )
 }
 
-export default App
+export default App;

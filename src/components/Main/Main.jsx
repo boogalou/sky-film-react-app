@@ -19,19 +19,19 @@ const Main = () => {
 
   const [trailersData, setTrailersData] = React.useState([]);
   useEffect(() => {
-    getData.getTrailers().then(data => setTrailersData(data));
+    getData.getTrailers().then(response => setTrailersData(response.results));
 
   }, []);
 
 
   const [popular, setPopular] = React.useState([]);
   useEffect(() => {
-    getData.getPopularity(isActive).then(data => setPopular(data));
+    getData.getPopularity(isActive).then(response => setPopular(response.results));
   }, [isActive]);
 
   const [trends, setTrends] = React.useState([]);
   useEffect(() => {
-    getData.getTrends(activeItem).then(data => setTrends(data));
+    getData.getTrends(activeItem).then(response => setTrends(response.results));
   }, [activeItem]);
 
   const setIsActiveHandler = (activeMenuitem) => {
@@ -47,38 +47,40 @@ const Main = () => {
 
   return (
     <>
-      <section id="popular">
-        <PopularSwitcher setIsActiveHandler={setIsActiveHandler}
-                         popularMenu={popularMenu}
-                         isActive={isActive}/>
-        <ul className="popular-box-wrapper">
-          {popular.map(movie => <PopularItem key={movie.id} {...movie}/>)}
-        </ul>
-      </section>
+      <div id="main-container">
+        <section id="popular">
+          <PopularSwitcher setIsActiveHandler={setIsActiveHandler}
+                           popularMenu={popularMenu}
+                           isActive={isActive}/>
+          <ul className="popular-box-wrapper">
+            {popular.map(movie => <PopularItem key={movie.id} {...movie}/>)}
+          </ul>
+        </section>
 
-      <section id="main">
-        <div className="cover" style={{backgroundImage: `url(${mouse})`, backgroundSize: 'cover'}}>
-          <div className="background" style={{backgroundColor: 'rgba(0,0,0, 0.5)'}}>
-            <h1 className="showcase-heading">Трейлеры</h1>
-            <ul className="showcase-box-wrapper">
-              {trailersData.map(trailer => <ShowcaseItem key={trailer.id} {...trailer}
-                                                         mouseSpyHandler={mouseSpyHandler}
+        <section id="main">
+          <div className="cover" style={{backgroundImage: `url(${mouse})`, backgroundSize: 'cover'}}>
+            <div className="background" style={{backgroundColor: 'rgba(0,0,0, 0.5)'}}>
+              <h1 className="showcase-heading">Трейлеры</h1>
+              <ul className="showcase-box-wrapper">
+                {trailersData.map(trailer => <ShowcaseItem key={trailer.id} {...trailer}
+                                                           mouseSpyHandler={mouseSpyHandler}
 
-              />)}
-            </ul>
+                />)}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="trends">
-        <TrendsSwitcher activeItemHandler={activeItemHandler}
-                        trendsMenu={trendsMenu}
-                        activeItem={activeItem}/>
-        <ul className="trends-box-wrapper">
-          {trends.map(movie => <TrendsItem key={movie.id} {...movie}/>)}
+        <section id="trends">
+          <TrendsSwitcher activeItemHandler={activeItemHandler}
+                          trendsMenu={trendsMenu}
+                          activeItem={activeItem}/>
+          <ul className="trends-box-wrapper">
+            {trends.map(movie => <TrendsItem key={movie.id} {...movie}/>)}
 
-        </ul>
-      </section>
+          </ul>
+        </section>
+      </div>
     </>
   )
 }

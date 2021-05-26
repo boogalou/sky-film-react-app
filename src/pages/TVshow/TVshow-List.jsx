@@ -11,7 +11,7 @@ const TVshowList = () => {
 
   useEffect(() => {
     setIsLoading(true)
-    shows.getTvshows().then(data => setTvshows(data))
+    shows.getTvshows().then(response => setTvshows(response.results))
     setIsLoading(false)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
