@@ -5,11 +5,10 @@ const {baseURL, API_KEY} = apiConfig;
 
 export class ApiService {
 
-  async getResource(url = '', lng = 'ru-RU', region = 'RU', search = '') {
+  async getResource(url = '', lng = 'ru-RU', region = 'RU', search = '', append) {
     const response = await axios.get(
-      `${baseURL}${url}${API_KEY}&language=${lng}&region=${region}&query=${search}&page=1`);
-    console.log(response.data)
-    return response.data
+      `${baseURL}${url}${API_KEY}&language=${lng}&region=${region}&query=${search}&page=1&append_to_response=${[append].join('')}`);
+    return await response.data
   }
 
   getMovies() {
@@ -49,7 +48,7 @@ export class ApiService {
   }
 
   getMovieForId({ movie_id }) {
-    return this.getResource(`movie/${movie_id}`, 'ru-RU', 'RU',);
+    return this.getResource(`movie/${movie_id}`, 'ru-RU', 'RU', null, ['credits', 'videos', 'images']);
   }
 }
 
