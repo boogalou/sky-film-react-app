@@ -1,5 +1,5 @@
 #container {
-    color: #e1e5ea;
+  color: #faf2da;
 }
 
 .content_wrapper {
@@ -31,7 +31,12 @@
     margin-bottom: 24px;
 }
 
-.facts span {
+.movie_title h2{
+    text-shadow: 5px 5px 5px black;
+    font-size: 40px;
+}
+
+.facts > span {
     margin-right: 15px;
 }
 
@@ -96,17 +101,17 @@ ol.people li {
     font-weight: 600;
     font-style: italic;
     font-size: small;
-    color: #939191;
+    color: #faf2da;
 }
 
 .tagline .review_title {
-
     font-style: italic;
     font-size: medium;
-    color: #939191;
+    color: #faf2da;
 }
 
 p {
+    color: #e1d9c5;
     padding: 0;
     margin: 0;
 }
