@@ -50,5 +50,10 @@ export class ApiService {
   getMovieForId({ movie_id }) {
     return this.getResource(`movie/${movie_id}`, 'ru-RU', 'RU', null, ['credits', 'videos', 'images']);
   }
+
+  getTrailersForId({ movie_id }) {
+    return this.getResource(`movie/${movie_id}/videos`, 'ru-RU', 'RU');
+  }
+
 }
 
