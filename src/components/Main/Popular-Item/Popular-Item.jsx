@@ -3,6 +3,7 @@ import './Popular-Item.css'
 import {apiConfig} from '../../../config'
 import {Link} from "react-router-dom";
 
+
 const PopularItem = (props) => {
   const {id, title, name, release_date, first_air_date, poster_path,} = props;
   return (
@@ -11,7 +12,7 @@ const PopularItem = (props) => {
         <div className="popular-box">
           <div className="popular-b-img">
             <Link to={`/movie/${id}`}>
-              <img src={`${apiConfig.image.w500ImgURL}${poster_path}`} alt="movie poster"/>
+              {<img src={apiConfig.image.w500ImgURL + poster_path} alt="movie poster"/>}
             </Link>
           </div>
 
@@ -23,9 +24,8 @@ const PopularItem = (props) => {
           </div>
         </div>
       </li>
-
     </>
   )
 }
 
-export default PopularItem
+export default PopularItem;

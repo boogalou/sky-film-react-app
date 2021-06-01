@@ -11,7 +11,6 @@ const Header = () => {
 
   const [searchValue, setSearchValue] = React.useState('');
   const [searchResult, setSearchResult] = React.useState([]);
-console.log(searchResult)
 
   const searchValueHandler = (evt) => {
     setSearchValue(evt.target.value);

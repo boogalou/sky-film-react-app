@@ -1,11 +1,11 @@
 import React from 'react'
-import './Showcase-Item.css'
-import {apiConfig} from '../../../config'
+import './Trailers-Item.css'
+import {apiConfig} from '../../../../config'
 import {motion} from "framer-motion";
-import play_icon from "../../../assets/img/play_icon.svg";
+import play_icon from "../../../../assets/img/play_icon.svg";
 
 
-const ShowcaseItem = (props) => {
+const TrailersItem = (props) => {
   const {id, backdrop_path, title, mouseSpyHandler, setActiveM, getTrailerVideo} = props;
 
 
@@ -18,7 +18,7 @@ const ShowcaseItem = (props) => {
       <li className='showcase-container'>
         <PlayButton clickHandler={ clickHandler }/>
         <div className="showcase-box" onClick={clickHandler}>
-          <motion.img src={apiConfig.image.w780ImgURL + backdrop_path} alt="movie poster"
+          <motion.img src={ apiConfig.image.w780ImgURL + backdrop_path } alt="movie poster"
                       onMouseMove={mouseSpyHandler}
                       whileHover={{scale: 1.02}}
                       whileTap={{scale: 0.99}}
@@ -33,7 +33,7 @@ const ShowcaseItem = (props) => {
   )
 }
 
-export default ShowcaseItem
+export default TrailersItem
 
 
 const PlayButton = ({clickHandler, id}) => {

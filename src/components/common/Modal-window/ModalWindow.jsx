@@ -6,13 +6,13 @@ const ModalWindow = ({ active, setActive, trailerId}) => {
 
   const getData = new ApiService();
 
-  const [isFetching, setIsFetching] = React.useState(false);
+  const [isFetching, setIsFetching] = React.useState(true);
   const [trailerVideo, setTrailerVideo] = React.useState([]);
 
   useEffect(() => {
-    setIsFetching(true);
     getData.getTrailersForId(trailerId).then(response => setTrailerVideo(response.results[0].key));
     setIsFetching(false);
+    return () => {}
   },[trailerId])
 
 console.log(trailerVideo)
