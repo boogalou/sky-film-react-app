@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
-import {apiConfig} from "../../../config";
-import TrailersItem from "../Trailers/Trilers-Item/Trailers-Item";
-import {ApiService} from "../../../api/apiService";
+import {apiConfig} from "../../config";
+import TrailersItem from "./Trilers-Item/Trailers-Item";
+import {ApiService} from "../../api/apiService";
+import styles from './Trailers.module.css'
 
 const Trailers = ({setActiveModal, activeModal, getTrailerVideo}) => {
   const getData = new ApiService();
@@ -23,12 +24,12 @@ const Trailers = ({setActiveModal, activeModal, getTrailerVideo}) => {
 
   return (
     <>
-      <div className="cover" style={{backgroundImage: `url(${!trailerBlockBackground && trailerBlockBackground
+      <div className={styles.cover} style={{backgroundImage: `url(${!trailerBlockBackground && trailerBlockBackground
           ? apiConfig.image.w1280ImgURL + img
           : trailerBlockBackground })`, backgroundSize: 'cover'}}>
-        <div className="background" style={{backgroundColor: 'rgba(0,0,0, 0.5)'}}>
-          <h1 className="showcase-heading">Трейлеры</h1>
-          <ul className="showcase-box-wrapper">
+        <div className={ styles.background} style={{backgroundColor: 'rgba(0,0,0, 0.5)'}}>
+          <h1 className={ styles.showcase_heading}>Трейлеры</h1>
+          <ul className={ styles.showcase_box_wrapper }>
             {trailersData.map(trailer => <TrailersItem key={trailer.id} {...trailer}
                                                        mouseSpyHandler={mouseSpyHandler}
                                                        setActiveM={setActiveModal}

@@ -1,0 +1,24 @@
+.showcase_box_wrapper {
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    height: auto;
+}
+
+.showcase_heading {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px 15px 30px;
+    font-size: 1.5em;
+    color: #e1e5ea;
+
+}
+
+.showcase_box_wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.showcase_box_wrapper::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 50px;
+}

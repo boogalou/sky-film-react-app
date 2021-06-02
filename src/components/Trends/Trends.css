@@ -1,0 +1,22 @@
+.trends-box-wrapper {
+
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    margin-bottom: 0;
+}
+
+.trends-box-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.trends-box-wrapper::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 50px;
+}
+
+.trends-heading {
+    margin: 30px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}

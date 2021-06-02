@@ -1,0 +1,22 @@
+.popular-box-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    margin-bottom: 0;
+}
+
+.popular-box-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.popular-box-wrapper::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 50px;
+}
+
+.popular-heading {
+    margin: 30px 30px 0px 30px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}

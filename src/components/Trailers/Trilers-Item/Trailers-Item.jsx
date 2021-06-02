@@ -1,8 +1,8 @@
 import React from 'react'
-import './Trailers-Item.css'
-import {apiConfig} from '../../../../config'
+import styles from './Trailers-Item.module.css'
+import {apiConfig} from '../../../config'
 import {motion} from "framer-motion";
-import play_icon from "../../../../assets/img/play_icon.svg";
+import play_icon from "../../../assets/img/play_icon.svg";
 
 
 const TrailersItem = (props) => {
@@ -15,17 +15,17 @@ const TrailersItem = (props) => {
   }
   return (
     <>
-      <li className='showcase-container'>
+      <li className={styles.showcase_container}>
         <PlayButton clickHandler={ clickHandler }/>
-        <div className="showcase-box" onClick={clickHandler}>
+        <div className={styles.showcase_box} onClick={clickHandler}>
           <motion.img src={ apiConfig.image.w780ImgURL + backdrop_path } alt="movie poster"
                       onMouseMove={mouseSpyHandler}
                       whileHover={{scale: 1.02}}
                       whileTap={{scale: 0.99}}
           />
         </div>
-        <div className='title-container'>
-          <span className='movie-title'>
+        <div className={styles.title_container}>
+          <span className={ styles.movie_title }>
             {title}
           </span></div>
       </li>
@@ -45,8 +45,8 @@ const PlayButton = ({clickHandler, id}) => {
   }
 
   return (
-    <div className='button-container' >
-      <div className='play-button' onClick={middleMan}>
+    <div className={styles.button_container} >
+      <div className={styles.play_button} onClick={middleMan}>
         <motion.img src={play_icon} alt="play button"
                     whileHover={{scale: 1.02}}
                     whileTap={{scale: 0.95}}

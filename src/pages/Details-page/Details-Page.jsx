@@ -11,10 +11,13 @@ const DetailsPage = () => {
 
 
   const [movieId, setMovieId] = React.useState([]);
+
   React.useEffect(() => {
     getData.getMovieForId(ID).then(response => setMovieId(response));
   }, []);
 
+  const crew = movieId && movieId.credits && movieId.credits.crew
+console.log(crew && crew.map(item => console.log(item.known_for_department)))
 
   const { title, poster_path, genres, overview, release_date, runtime, tagline, backdrop_path, } = movieId
 
