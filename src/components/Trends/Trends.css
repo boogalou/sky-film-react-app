@@ -1,9 +1,9 @@
 .trends-box-wrapper {
-
     display: flex;
     align-items: flex-start;
     overflow-x: auto;
     margin-bottom: 0;
+    min-height: 350px;
 }
 
 .trends-box-wrapper::-webkit-scrollbar {
@@ -17,6 +17,6 @@
 
 .trends-heading {
     margin: 30px 30px 0px 30px;
-    font-weight: 500;
+    font-weight: 100;
     font-size: 1.3rem;
 }

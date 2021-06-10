@@ -9,6 +9,7 @@ export class ApiService {
     const response = await axios.get(
       `${baseURL}${url}${API_KEY}&language=${lng}&region=${region}&query=${search}&page=1&append_to_response=${[append].join('')}`);
     return await response.data
+
   }
 
   getMovies() {
@@ -44,14 +45,18 @@ export class ApiService {
   }
 
   search(searchValue) {
-    return this.getResource(['search/multi', `${searchValue}`]);
+    return this.getResource('search/multi', 'ru-RU', 'RU', `${searchValue}`);
   }
 
-  getMovieForId({ movie_id }) {
+  getMovieTvForId({movie_id}, isActive) {
+    console.log('isActive:', movie_id, isActive);
+    if (isActive === 'По ТВ') {
+      return this.getResource(`tv/${movie_id}`, 'ru-RU', 'RU', null, ['credits', 'videos', 'images']);
+    }
     return this.getResource(`movie/${movie_id}`, 'ru-RU', 'RU', null, ['credits', 'videos', 'images']);
   }
 
-  getTrailersForId({ movie_id }) {
+  getTrailersForId({movie_id}) {
     return this.getResource(`movie/${movie_id}/videos`, 'ru-RU', 'RU');
   }
 

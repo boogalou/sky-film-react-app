@@ -1,0 +1,33 @@
+/*.search_list {*/
+/*    position: absolute;*/
+/*    width: 280px;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    margin: 165px 0 0 0;*/
+/*    padding: 0;*/
+/*    font-size: 11pt;*/
+/*    border-radius: 5px;*/
+/*    visibility: hidden;*/
+
+/*}*/
+
+/*.search_list.active {*/
+/*    visibility: visible;*/
+/*}*/
+
+.search_item a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #666;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    border-bottom: none;
+}
+
+.search_item a:hover {
+    color: #626262;
+    /* Цвет текста активного пункта */
+    background-color: #d6d6d6;
+    /* Цвет фона активного пункта */
+}

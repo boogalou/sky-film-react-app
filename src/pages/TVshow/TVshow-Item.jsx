@@ -8,9 +8,9 @@ const TVshowItem = ({id, original_name, poster_path}) => {
       <div className="tvshow-box">
         <div className="tvshow-img">
           <div className="h-desc"></div>
-          <img src={ apiConfig.baseImgURL + poster_path } alt="" />
+          <img src={ apiConfig.image.w500ImgURL + poster_path } alt="" />
         </div>
-        <Link to="#">
+        <Link to={`/tvshows/${id}`}>
           { original_name }
         </Link>
       </div>

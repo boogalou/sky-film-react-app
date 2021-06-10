@@ -36,7 +36,6 @@ const PopularSwitcher = ({ setIsActiveHandler, isActive, popularMenu }) => {
 export default PopularSwitcher;
 
 const MenuItem = ({ item, menuSelectorHandler, activeItem }) => {
-
   return (
     <>
       <div

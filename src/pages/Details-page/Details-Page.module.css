@@ -92,6 +92,10 @@ ol.people li {
     margin-right: 10px;
 }
 
+.profile a {
+    color: #faf2da;
+}
+
 .profile .character {
     font-weight: 100;
     font-size: small;
@@ -115,4 +119,45 @@ p {
     padding: 0;
     margin: 0;
 }
+
+
+
+
+/*Cast*/
+
+.cast_box_header {
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+.cast_box_title h2 {
+    padding-top: 12px;
+    padding-bottom: 8px;
+    max-width: 75%;
+}
+
+.cast_box_wrapper {
+    /*max-width: 75%;*/
+    display: flex;
+    align-items: flex-start;
+    overflow-x: auto;
+    margin-bottom: 0;
+}
+
+/*.cast_heading {*/
+/*    margin: 30px 30px 0px 30px;*/
+/*    font-weight: 500;*/
+/*    font-size: 1.3rem;*/
+/*}*/
+
+.cast_box_wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.cast_box_wrapper::-webkit-scrollbar-thumb {
+    background-color: #dbdbdb;
+    border-radius: 50px;
+}
+
 

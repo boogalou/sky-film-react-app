@@ -5,7 +5,7 @@ import Trailers from "../Trailers/Trailers";
 import Trends from "../Trends/Trends";
 import Popular from "../Popular/Popular";
 
-const Main = () => {
+const Main = ({ switchPositionHandler }) => {
 
   const [activeModal, setActiveModal] = React.useState(false);
   const [trailerId, setTrailerId] = useState({})
@@ -18,7 +18,7 @@ const Main = () => {
       <ModalWindow active={activeModal} setActive={setActiveModal} trailerId={trailerId}/>
       <div id="main-container">
         <section id="popular">
-          <Popular />
+          <Popular switchPositionHandler={switchPositionHandler}/>
         </section>
 
         <section id="trailers">
@@ -28,7 +28,7 @@ const Main = () => {
         </section>
 
         <section id="trends">
-          <Trends />
+          <Trends/>
         </section>
       </div>
 

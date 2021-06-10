@@ -4,7 +4,7 @@ import PopularItem from "./Popular-Item/Popular-Item";
 import {ApiService} from "../../api/apiService";
 import './Popular.css'
 
-const Popular = () => {
+const Popular = ({ switchPositionHandler }) => {
   const getData = new ApiService();
   const popularMenu = ['По ТВ', 'В кинотеатрах'];
   const [isActive, setIsActive] = React.useState(null);
@@ -17,13 +17,15 @@ const Popular = () => {
     getData.getPopularity(isActive).then(response => setPopular(response.results));
   }, [isActive]);
 
+  switchPositionHandler(isActive)
+
   return (
     <>
       <PopularSwitcher setIsActiveHandler={setIsActiveHandler}
                        popularMenu={popularMenu}
                        isActive={isActive}/>
       <ul className="popular-box-wrapper">
-        {popular.map(movie => <PopularItem key={movie.id} {...movie}/>)}
+        {popular.map(movie => <PopularItem key={movie.id} {...movie} switchPosition={isActive}/>)}
       </ul>
     </>
   );

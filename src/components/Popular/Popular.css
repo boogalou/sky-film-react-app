@@ -4,6 +4,7 @@
     align-items: flex-start;
     overflow-x: auto;
     margin-bottom: 0;
+    min-height: 350px;
 }
 
 .popular-box-wrapper::-webkit-scrollbar {
